@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* Light text color */
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #212529; /* Dark container background color */
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #28a745; /* Success message background color */
+            border: 1px solid #218838; /* Success message border color */
+            color: #ffffff; /* Success message text color */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Style for create account button */
+        #createAccountBtn {
+            margin-top: 20px;
+        }
+
+        /* Style for forgot password link */
+        #forgotPassword {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Styling for links */
+        a {
+            color: #ffffff; /* Link text color */
+            text-decoration: underline; /* Underline for links */
+        }
+
+        /* Styling for links on hover */
+        a:hover {
+            color: #cccccc; /* Hover color for links */
+            text-decoration: none; /* Remove underline on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+
+        <!-- Forgot Password Link -->
+        <div id="forgotPassword">
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <!-- Create Account Button -->
+        <div id="createAccountBtn">
+            <button class="btn btn-success btn-block">Create an Account</button>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <p>Login successful! Welcome, user!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js (for Bootstrap features) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // JavaScript to handle form submission and show success message
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Assuming some logic to check login credentials (e.g., AJAX request to server)
+        // For demonstration purposes, let's assume login is successful
+        showSuccessMessage();
+    });
+
+    function showSuccessMessage() {
+        // Hide the form
+        document.getElementById('loginForm').style.display = 'none';
+
+        // Show the success message
+        document.getElementById('successMessage').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
