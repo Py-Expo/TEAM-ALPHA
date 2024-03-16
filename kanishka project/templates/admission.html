@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Form</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="admission-container">
+            <h2>College Admission Form</h2>
+            <form id="admissionForm" method="post">
+                <!-- Student Details Section -->
+                <h3>Student Details</h3>
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="aadharNumber">Aadhar Number:</label>
+                    <input type="text" class="form-control" id="aadharNumber" name="aadharNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="panNumber">PAN Number:</label>
+                    <input type="text" class="form-control" id="panNumber" name="panNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <select class="form-control" id="state" name="state" required>
+                        <option value="" selected disabled>Select State</option>
+                        <option value="Andhra Pradesh">TAMILNADU</option>
+                        <option value="Arunachal Pradesh">KERALA</option>
+                        <!-- Add more states here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">10th Marks:</label>
+                    <label for="marksTamil">Tamil Marks:</label>
+                    <input type="number" class="form-control" id="marksTamil" name="marksTamil" required>
+                </div>
+                <div class="form-group">
+                    <label for="marksEnglish">English Marks:</label>
+                    <input type="number" class="form-control" id="marksEnglish" name="marksEnglish" required>
+                </div>
+                <div class="form-group">
+                    <label for="marksMathematics">Mathematics Marks:</label>
+                    <input type="number" class="form-control" id="marksMathematics" name="marksMathematics" required>
+                </div>
+                <div class="form-group">
+                    <label for="marksScience">Science Marks:</label>
+                    <input type="number" class="form-control" id="marksScience" name="marksScience" required>
+                </div>
+                <div class="form-group">
+                    <label for="marksSocialScience">Social Science Marks:</label>
+                    <input type="number" class="form-control" id="marksSocialScience" name="marksSocialScience" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">12 th Marks:</label>
+                    <label for="selectedGroup">Select Group:</label>
+                    <select class="form-control" id="selectedGroup" name="selectedGroup" required onchange="showSubjects()">
+                        <option value="" selected disabled>Select Group</option>
+                        <option value="BioMaths">Bio-Maths</option>
+                        <option value="ComputerScience">Computer Science</option>
+                    </select>
+                </div>
+                <div id="bioMathsSubjects" style="display: none;">
+
+                    <div class="form-group">
+                        <label for="marksBiology">Biology Marks:</label>
+                        <input type="number" class="form-control" id="marksBiologyBio" name="marksBiology" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksPhysics">Physics Marks:</label>
+                        <input type="number" class="form-control" id="marksPhysicsBio" name="marksPhysics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksChemistry">Chemistry Marks:</label>
+                        <input type="number" class="form-control" id="marksChemistryBio" name="marksChemistry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksBiology">Mathematics Marks:</label>
+                        <input type="number" class="form-control" id="marksMathematicsBio" name="marksMathematics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksPhysics">Tamil Marks:</label>
+                        <input type="number" class="form-control" id="marksTamilBio" name="marksTamil" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksChemistry">English Marks:</label>
+                        <input type="number" class="form-control" id="marksEnglishBio" name="marksEnglish" required>
+                    </div>
+                    <!-- Add more subjects if needed -->
+                </div>
+                <div id="computerScienceSubjects" style="display: none;">
+                    <div class="form-group">
+                        <label for="marksComputerScience">Computer Science Marks:</label>
+                        <input type="number" class="form-control" id="marksComputerScienceCS" name="marksComputerScience" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksMathematics">Mathematics Marks:</label>
+                        <input type="number" class="form-control" id="marksMathematicsCS" name="marksMathematics" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marksPhysics">Physics Marks:</label>
+                        <input type="number" class="form-control" id="marksPhysicsCS" name="marksPhysics" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksChemistry">Chemistry Marks:</label>
+                        <input type="number" class="form-control" id="marksChemistryCS" name="marksChemistry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksTamil">Tamil Marks:</label>
+                        <input type="number" class="form-control" id="marksTamilCS" name="marksTamil" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marksEnglish">English Marks:</label>
+                        <input type="number" class="form-control" id="marksEnglishCS" name="marksEnglish" required>
+                    </div>
+
+                    <!-- Add more subjects if needed -->
+                </div>
+                <div class="form-group">
+                    <label for="engineeringCutoff">Engineering Cutoff (Out of 200):</label>
+                    <input type="number" class="form-control" id="engineeringCutoff" name="engineeringCutoff" required>
+                </div>
+
+                <!-- College Courses -->
+                <div class="form-group">
+                    <label for="courseType">Select Course Type:</label>
+                    <select class="form-control" id="courseType" name="courseType" required onchange="showCourses()">
+                        <option value="" selected disabled>Select Course Type</option>
+                        <option value="UG">Undergraduate (UG)</option>
+                        <option value="PG">Postgraduate (PG)</option>
+                    </select>
+                </div>
+
+                <!-- UG Courses -->
+                <div id="ugCourses" style="display: none;">
+                    <div class="form-group">
+                        <label for="ugCourse">Select UG Course:</label>
+                        <select class="form-control" id="ugCourse" name="ugCourse" required>
+                            <option value="" selected disabled>Select UG Course</option>
+                            <option value="BTECH_AI&DS">Bachelor of Technology in Artificial Intelligence and Data Science (B.Tech AI&DS)</option>
+                            <option value="BTECH_CSBS">Bachelor of Technology in Computer Science and Business Systems (B.Tech CSBS)</option>
+                            <option value="BE_ECE">Bachelor of Engineering in Electrical and Communication Engineering (BE ECE)</option>
+                            <option value="BE_CSE">Bachelor of Engineering in Computer Science Engineering (BE CSE)</option>
+                            <option value="BTECH_IT">Bachelor of Technology in Information Technology (B.Tech it)</option>
+                            <option value="BE_MECH">Bachelor of Engineering in Mechanical Engineering (BE MECH)</option>
+                            
+                            <!-- Add more UG courses if needed -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- PG Courses -->
+                <div id="pgCourses" style="display: none;">
+                    <div class="form-group">
+                        <label for="pgCourse">Select PG Course:</label>
+                        <select class="form-control" id="pgCourse" name="pgCourse" required>
+                            <option value="" selected disabled>Select PG Course</option>
+                            <option value="ME_AI&DS">Master of Engineering in Artificial Intelligence and Data Science (ME AI&DS)</option>
+                            <option value="ME_CSBS">Master of Engineering in Computer Science and Business Systems (ME CSBS)</option>
+                            <!-- Add more PG courses if needed -->
+                        </select>
+                    </div>
+                    <!-- Add specialization fields for each PG course if needed -->
+                </div>
+
+                <!-- Parent or Guardian Details Section -->
+                <h3>Parent or Guardian Details</h3>
+                <div class="form-group">
+                    <label for="parentName">Parent/Guardian Name:</label>
+                    <input type="text" class="form-control" id="parentName" name="parentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentMobile1">Parent/Guardian Mobile Number 1:</label>
+                    <input type="tel" class="form-control" id="parentMobile1" name="parentMobile1" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentMobile2">Parent/Guardian Mobile Number 2:</label>
+                    <input type="tel" class="form-control" id="parentMobile2" name="parentMobile2">
+                </div>
+                <div class="form-group">
+                    <label for="parentOccupation">Parent/Guardian Occupation:</label>
+                    <input type="text" class="form-control" id="parentOccupation" name="parentOccupation" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentAadharNumber">Parent/Guardian Aadhar Number:</label>
+                    <input type="text" class="form-control" id="parentAadharNumber" name="parentAadharNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentPanNumber">Parent/Guardian PAN Number:</label>
+                    <input type="text" class="form-control" id="parentPanNumber" name="parentPanNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentAnnualIncome">Parent/Guardian Annual Income:</label>
+                    <input type="number" class="form-control" id="parentAnnualIncome" name="parentAnnualIncome" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentEmail">Parent/Guardian Email:</label>
+                    <input type="email" class="form-control" id="parentEmail" name="parentEmail">
+                </div>
+
+                <button type="button" onclick="submitForm()" class="btn btn-primary btn-block">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (for Bootstrap features and AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showSubjects() {
+            var selectedGroup = document.getElementById("selectedGroup").value;
+            if (selectedGroup === "BioMaths") {
+                document.getElementById("bioMathsSubjects").style.display = "block";
+                document.getElementById("computerScienceSubjects").style.display = "none";
+            } else if (selectedGroup === "ComputerScience") {
+                document.getElementById("bioMathsSubjects").style.display = "none";
+                document.getElementById("computerScienceSubjects").style.display = "block";
+            }
+        }
+
+        function showCourses() {
+            var courseType = document.getElementById("courseType").value;
+            if (courseType === "UG") {
+                document.getElementById("ugCourses").style.display = "block";
+                document.getElementById("pgCourses").style.display = "none";
+            } else if (courseType === "PG") {
+                document.getElementById("ugCourses").style.display = "none";
+                document.getElementById("pgCourses").style.display = "block";
+            }
+        }
+
+        function submitForm() {
+            var form = $('#admissionForm');
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function(data) {
+                    alert('Admission form submitted successfully!');
+                    form.trigger('reset');
+                },
+                error: function(xhr, status, error) {
+                    alert('An error occurred while submitting the form: ' + error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

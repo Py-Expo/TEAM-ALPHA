@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registered Users</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Student Name</th>
+                    <th>Details</th>
+                    <th>Filled Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.full_name }}</td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailsModal{{ user.id }}">
+                            Click here
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="detailsModal{{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel{{ user.id }}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="detailsModalLabel{{ user.id }}">Student Details</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>College Admission Form</h4>
+                                        <h5>Student Details</h5>
+                                        <ul>
+                                            <li><strong>Full Name:</strong> {{ user.full_name }}</li>
+                                            <li><strong>Email:</strong> {{ user.email }}</li>
+                                            <li><strong>Phone Number:</strong> {{ user.phone }}</li>
+                                            <li><strong>Date of Birth:</strong> {{ user.dob }}</li>
+                                            <li><strong>Address:</strong> {{ user.address }}</li>
+                                            <li><strong>Aadhar Number:</strong> {{ user.aadhar_number }}</li>
+                                            <li><strong>PAN Number:</strong> {{ user.pan_number }}</li>
+                                            <li><strong>State:</strong> {{ user.state }}</li>
+                                            <li><strong>Tamil Marks:</strong> {{ user.marks_tamil }}</li>
+                                            <li><strong>English Marks:</strong> {{ user.marks_english }}</li>
+                                            <li><strong>Mathematics Marks:</strong> {{ user.marks_mathematics }}</li>
+                                            <li><strong>Science Marks:</strong> {{ user.marks_science }}</li>
+                                            <li><strong>Social Science Marks:</strong> {{ user.marks_social_science }}</li>
+                                            <li><strong>Selected Group:</strong> {{ user.selected_group }}</li>
+                                            <li><strong>12th Marks:</strong> {{ user.marks_12 }}</li>
+                                            <li><strong>Selected Course:</strong> {{ user.selected_course }}</li>
+                                            <li><strong>Engineering Cutoff:</strong> {{ user.engineering_cutoff }}</li>
+                                            <li><strong>Parent/Guardian Name:</strong> {{ user.parent_name }}</li>
+                                            <li><strong>Parent/Guardian Mobile Number 1:</strong> {{ user.parent_mobile1 }}</li>
+                                            <li><strong>Parent/Guardian Mobile Number 2:</strong> {{ user.parent_mobile2 }}</li>
+                                            <li><strong>Parent/Guardian Occupation:</strong> {{ user.parent_occupation }}</li>
+                                            <li><strong>Parent/Guardian Aadhar Number:</strong> {{ user.parent_aadhar_number }}</li>
+                                            <li><strong>Parent/Guardian PAN Number:</strong> {{ user.parent_pan_number }}</li>
+                                            <li><strong>Parent/Guardian Annual Income:</strong> {{ user.parent_annual_income }}</li>
+                                            <li><strong>Parent/Guardian Email:</strong> {{ user.parent_email }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{ user.filled_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (for Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
